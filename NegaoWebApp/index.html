@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--29.10.2019 terminado 02.11.2019 e publicado 02.11.2019-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8">
+    <title>Negão WebApp</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <h1>WebApp de Jean</h1>
+    <p>Essa página calcula o período de um pêndulo simples<br >
+    por meio da fórmula:
+  <em>T = 2π√l/g.</em><br >
+  Mais informações através desse <a href="https://www.sofisica.com.br/conteudos/Ondulatoria/MHS/pendulo.php" title="SoFisica"> site.</a></a>
+
+</p>
+
+
+  </head>
+  <body>
+    <form style="font-family:Comic Sans Ms; text-align: center;">
+    Comprimento:<br > <input type="text" name="num1"><br >
+    Aceleração:<br > <input type="text" name="num2"><br >    
+    <input type="button" value="Calcular" onclick="pendulo()"><br>
+    Resultado:<br > <input type="text" name="sum"><br>
+  </form>
+
+    <script>
+    //var l = window.prompt("Digite comprimento: ")
+    //var g = window.prompt("Digite aceleração: ")
+    function pendulo(){
+      let num1 = document.getElementsByName("num1")[0].value;
+      let num2 = document.getElementsByName("num2")[0].value;
+      let sum = 2*Math.PI*Math.sqrt(Number(num1)/Number(num2));
+      //var t_arr = t.toFixed(2);
+      //alert("O resultado é: " + t);
+      document.getElementsByName("sum")[0].value = sum.toFixed(2);
+
+    }
+    </script>
+    <br>
+
+<h3>Contato</h3>
+<body>
+        
+        <form action="mailto:cabralguerra@gmail.com" method="post">
+            <input type="submit" value="Entre em contato" name="Enviar email">
+        </form>
+
+       
+        <div><a href="https://api.whatsapp.com/send?phone=5579988284730&text=Entrar em contato" target="_blank">
+            <img class="whatsapp" src="zap.gif" style="width:50; height: 50px;"/><br>
+
+            <a href="https://twitter.com/teufel8?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @teufel8</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </a>
+    </div>
+
+<div id="footer">
+  &copy; 2019, WebApp de Jean Filipe
+  <br>
+  concebido e desenvolvido por Jovane Rocha
+</div>
+
+
+  </body>
+</html>
