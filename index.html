@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--29.10.2019 terminado 02.11.2019 e publicado 02.11.2019, 
+  refatorado em 17.04.2020-->
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <title>Negão WebApp</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/cf859e024f.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <section id="wrap">
+    <h1>WebApp de Jean</h1>
+    <p>Essa página calcula o período de um pêndulo simples<br>
+      por meio da fórmula:
+      <em>T = 2π√l/g.</em><br>
+      Mais informações através desse <a href="https://www.sofisica.com.br/conteudos/Ondulatoria/MHS/pendulo.php"
+        title="SoFisica"> site.</a></a>
+    </p>
+
+    <form>
+      Comprimento:<br> <input autofocus type="number" name="num1"><br>
+      Aceleração:<br> <input type="number" name="num2"><br>
+      <input type="button" value="Calcular" onclick="pendulo()"><br>
+      Resultado:<br> <input type="text" name="sum"><br>
+    </form>
+  </section>
+
+  <section id="contato">
+    <h3>Contato</h3>
+
+    <a href="https://twitter.com/jeanbrabo07"><i class="fab fa-twitter-square"></i></a>
+
+    <p id="date"></p>
+  </section>
+
+  <footer>
+    &copy; 2019 - WebApp de Jean Filipe
+    <br>
+    concebido e desenvolvido por <a href="https://jcgsr.github.io/">Jovane Rocha</a>
+  </footer>
+
+  <script>
+    //var l = window.prompt("Digite comprimento: ")
+    //var g = window.prompt("Digite aceleração: ")
+    function pendulo() {
+      let num1 = document.getElementsByName("num1")[0].value;
+      let num2 = document.getElementsByName("num2")[0].value;
+      let sum = 2 * Math.PI * Math.sqrt(Number(num1) / Number(num2));
+      //var t_arr = t.toFixed(2);
+      //alert("O resultado é: " + t);
+      document.getElementsByName("sum")[0].value = sum.toFixed(2);
+
+      let date = new Date();
+      let currentDate = date.toLocaleDateString('pt-BR', {
+        day: '2-digit',
+        month: 'short',
+        year: 'numeric'
+      });
+
+      document.querySelector('#date').innerHTML = currentDate;
+    }
+  </script>
+</body>
+
+</html>
